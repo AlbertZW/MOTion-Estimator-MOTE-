@@ -1,8 +1,3 @@
-# Code for "TDN: Temporal Difference Networks for Efficient Action Recognition"
-# arXiv: 2012.10071
-# Limin Wang, Zhan Tong, Bin Ji, Gangshan Wu
-# tongzhan@smail.nju.edu.cn
-
 import os
 import time
 import torch
@@ -13,7 +8,7 @@ import torch.backends.cudnn as cudnn
 import torch.optim
 from torch.nn.utils import clip_grad_norm_
 from ops.dataset import TSNDataSet
-from grafting_ops.models import TSN
+from ops.models import TSN
 from ops.transforms import *
 from ops.logger import setup_logger
 from ops.lr_scheduler import get_scheduler

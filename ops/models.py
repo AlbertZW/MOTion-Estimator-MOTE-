@@ -1,15 +1,8 @@
-# Code for "TDN: Temporal Difference Networks for Efficient Action Recognition"
-# arXiv: 2012.10071
-# Limin Wang, Zhan Tong, Bin Ji, Gangshan Wu
-# tongzhan@smail.nju.edu.cn
-
 from torch import nn
 
 from ops.basic_ops import ConsensusModule
 from ops.transforms import *
 from torch.nn.init import normal_, constant_
-from grafting_ops.tdn_net import tdn_net
-from grafting_ops.mgen_net import mgen_net
 
 class TSN(nn.Module):
     def __init__(self, num_class, num_segments, modality,
@@ -95,21 +88,25 @@ class TSN(nn.Module):
     def _prepare_base_model(self, base_model, num_segments):
         print(('=> base model: {}'.format(base_model)))
         if 'resnet' in base_model :
-            # from grafting_ops.tdn_net import tdn_net
-            # from grafting_ops.mgen_net import mgen_net
-            # if self.teacher_network:
-            #     self.base_model = tdn_net(base_model, num_segments)
-            #     self.base_model.last_layer_name = 'fc'
-            # else:
-            #     self.base_model = mgen_net(base_model, num_segments, self.step)
-            #
-            # if self.step == 2 or self.step == 3:
-            #     self.base_model.p2.last_layer_name = 'fc'
+            
+            ####################################################################
+            from ops.tdn_net import tdn_net
+            from ops.mgen_net import mgen_net
+            if self.teacher_network:
+                self.base_model = tdn_net(base_model, num_segments)
+                self.base_model.last_layer_name = 'fc'
+            else:
+                self.base_model = mgen_net(base_model, num_segments, self.step)
+            
+            if self.step == 2 or self.step == 3:
+                self.base_model.p2.last_layer_name = 'fc'
 
 
-            from grafting_ops.mote_tsm import mote_tsm
-            self.base_model = mote_tsm(base_model, num_segments, is_shift=True)
-            self.base_model.p2.last_layer_name = 'fc'
+            # from ops.mote_tsm import mote_tsm
+            # self.base_model = mote_tsm(base_model, num_segments, is_shift=True)
+            # self.base_model.p2.last_layer_name = 'fc'
+
+            ####################################################################
 
             self.input_size = 224
             self.input_mean = [0.485, 0.456, 0.406]

@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0,1 python test_models.py kinetics --archs=resnet50 --weights ./checkpoint/MOTE_TSN_kinetics_RGB_resnet50_avg_segment8_e80/best.pth.tar  --test_segments=8 --batch_size=16 -j 4

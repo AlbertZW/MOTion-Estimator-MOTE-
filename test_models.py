@@ -1,8 +1,3 @@
-# Code for "TSM: Temporal Shift Module for Efficient Video Understanding"
-# arXiv:1811.08383
-# Ji Lin*, Chuang Gan, Song Han
-# {jilin, songhan}@mit.edu, ganchuang@csail.mit.edu
-
 # Notice that this file has been modified to support ensemble testing
 
 import os
@@ -12,8 +7,8 @@ import time
 import torch.nn.parallel
 import torch.optim
 from sklearn.metrics import confusion_matrix
-from grafting_ops.dataset import TSNDataSet
-from grafting_ops.models import TSN
+from ops.dataset import TSNDataSet
+from ops.models import TSN
 from ops.transforms import *
 from ops import dataset_config
 from torch.nn import functional as F
