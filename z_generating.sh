@@ -1,0 +1,1 @@
+python -m torch.distributed.launch --master_port 12391 --nproc_per_node=1 step_generate.py something RGB --arch resnet50 --num_segments 8 --gd 20 --lr 0.0002 --lr_scheduler step --lr_steps 1 --lr_decay_rate 5 --epochs 1 --batch-size 12 --wd 5e-4 --dropout 0.5 --consensus_type=avg --eval-freq=1 -j 4 --npb
