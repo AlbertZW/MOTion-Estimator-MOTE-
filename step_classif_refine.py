@@ -31,7 +31,7 @@ def main():
     torch.cuda.set_device(args.local_rank)
     torch.distributed.init_process_group(backend='nccl', init_method='env://')
 
-    model_name = 'MOTE_wSSIM'
+    model_name = 'MOTE_LTDM'
     # model_name = 'MOTE_TSM'
 
     num_class, args.train_list, args.val_list, args.root_path, prefix = dataset_config.return_dataset(args.dataset, args.modality)
