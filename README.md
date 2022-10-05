@@ -1,7 +1,7 @@
 # MOTion-Estimator
  
 ## Overview
-We release the PyTorch code of [MOTE].
+We release the PyTorch code of [MOTE](https://ieeexplore.ieee.org/document/9907887).
 
 
 ![](./images/pipeline.png)
