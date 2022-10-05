@@ -43,3 +43,15 @@ Be careful with part from line 92 to 109 in file ```ops/models```, for the trans
 Checkpoints of teacher network, MOTE and the transplanted models can be downloaded [here](https://drive.google.com/drive/folders/1yMN1qkXd8Ni6Tl5ZaJoRp2CM8SOfPo-S?usp=sharing).
 
 ## Citation
+```
+@ARTICLE{9907887,
+  author={Shen, Zhongwei and Wu, Xiao-Jun and Li, Hui and Xu, Tianyang and Wu, Cong},
+  journal={IEEE Transactions on Multimedia}, 
+  title={I Know How You Move: Explicit Motion Estimation for Human Action Recognition}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={1-13},
+  doi={10.1109/TMM.2022.3211423}}
+
+```
